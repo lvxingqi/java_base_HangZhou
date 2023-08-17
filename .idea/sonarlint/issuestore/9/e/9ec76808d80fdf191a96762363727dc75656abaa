@@ -1,0 +1,22 @@
+
+j
+java:S1104"MMake a a static final constant or non-public and provide accessors if needed.(‚ÈÂÉ8ƒõ¯ë1
+j
+java:S11040"MMake b a static final constant or non-public and provide accessors if needed.(“ú»Á8“õ¯ë1
+U	java:S106""9Replace this use of System.out or System.err by a logger.(ğ®Ñ8¢õ¯ë1
+I
+java:S1172%",Remove this unused method parameter "money".(â·ŒŞ8²õ¯ë1
+T	java:S1064"9Replace this use of System.out or System.err by a logger.(¤…³8³õ¯ë1
+W
+java:S11617":Add the "@Override" annotation above this method signature(Õáò¨8³õ¯ë1
+Z	java:S1068"9Replace this use of System.out or System.err by a logger.(½óäàúÿÿÿÿ8´õ¯ë1
+W
+java:S1161;":Add the "@Override" annotation above this method signature(â·ŒŞ8´õ¯ë1
+W
+java:S1161@":Add the "@Override" annotation above this method signature(Ô‚€®8´õ¯ë1
+^
+java:S2094F"BRemove this empty class, write its code or make it an "interface".(ıÕ¶T8´õ¯ë1
+d
+java:S2094L"BRemove this empty class, write its code or make it an "interface".(èùß§úÿÿÿÿ8´õ¯ë1
+G
+java:S1068"%Remove this unused "c" private field.(µì¿¾øÿÿÿÿ8µõ¯ë1
