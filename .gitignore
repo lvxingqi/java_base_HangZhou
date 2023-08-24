@@ -1,0 +1,29 @@
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+# Compiled binary files
+*.class
+*.jar
+
+# IDE and editor files
+.idea/
+
+# Dependency directories
+lib
+target/
+node_modules/
+vendor/
+
+# Logs and databases
+*.log
+*.sqlite
+*.h2.db
+
+files
+file
