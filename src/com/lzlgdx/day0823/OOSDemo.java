@@ -2,13 +2,14 @@ package com.lzlgdx.day0823;
 
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 /**
  * @author 吕星琪
  * @version 1.10 2023/8/23 下午 04:33
  * @since jdk1.0
  */
-public class OOSDemo {
+public class OOSDemo implements Serializable {
     private static final long serialVersionUID = -4542266166762741462L;
     public transient int a;//序列化时a被当作不存在
     private int test;

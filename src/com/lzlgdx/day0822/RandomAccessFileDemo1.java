@@ -1,5 +1,6 @@
 package com.lzlgdx.day0822;
 
+import java.io.File;
 import java.io.RandomAccessFile;
 import java.util.Arrays;
 
@@ -14,7 +15,6 @@ public class RandomAccessFileDemo1 {
         int n=raf.read();
         System.out.println((char) n);
         System.out.println(n);
-
         int n1=raf.read();
         long p=raf.getFilePointer();
         System.out.println(p);

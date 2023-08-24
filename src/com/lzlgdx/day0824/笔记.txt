@@ -1,0 +1,23 @@
+File(创建文件对象，如果没有该文件对象，还需要create，目录也是,包含了对文件的创建，删除，判断等操作，没有写方法)
+
+
+注意:凡是流都需要关闭
+字节流
+OutputStream 抽象类 InputStream 抽象类
+RandomAccessFile(可以设置文件的读写权限,包含了对文件内容的读写操作,指针偏移量，得到文件描述)
+FileOutputStream(包含向文件写入内容的一系列方法)  FileInputStream(包含一系列读文件内容的方法)
+决定文件内容追加还是覆盖
+BufferedOutputStream    BufferedInputStream (加入了缓冲区,输入流读，输出流写)
+ObjectOutputStream  ObjectInputSteam
+(采用序列化，将对象序列化后的字节写入文件,可读,重载对象状态,需要对象所属类实现Serializable接口才可序列化,
+加入serialVersionUID确保对象序列化后对类进行修改,引发错误问题，transient关键字可以让修饰的字段不参与序列化)
+
+字符流
+Reader 抽象类  Writer抽象类
+InputStreamReader(一系列字符读的方法)
+OutputStreamWriter(一系列字符流写的方法)
+BufferedReader(加缓冲，继承自Reader)
+BufferedWriter(加缓冲，继承自Writer)
+PrintWriter(一系列字符流写的方法,自带行缓冲,继承自Writer)
+
+加缓冲是在内存中有一块缓冲区域，减少了频繁对磁盘的操作。提升了性能。批量处理读写。
