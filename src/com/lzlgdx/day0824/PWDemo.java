@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
  * @since jdk1.0
  */
 public class PWDemo {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         FileOutputStream fos = new FileOutputStream("files/pw.txt",true);
         OutputStreamWriter osw=new OutputStreamWriter(fos, StandardCharsets.UTF_8);//字符输出流，设置编码
         PrintWriter pw=new PrintWriter(osw,true);//自动行刷新

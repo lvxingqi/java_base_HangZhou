@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
  * @since jdk1.0
  */
 public class ISRDemo {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         InputStreamReader isr=new InputStreamReader(new FileInputStream("files/h.txt"));
         int m;
         while((m=isr.read())!=-1){

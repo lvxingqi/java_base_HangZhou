@@ -12,7 +12,7 @@ import java.nio.charset.StandardCharsets;
  * @since jdk1.0
  */
 public class BRDemo {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         BufferedReader br=new BufferedReader(new InputStreamReader(new FileInputStream(
                 new File("files","br.txt")),StandardCharsets.UTF_8));
         String s = br.readLine();
