@@ -2,10 +2,8 @@ package com.lzlgdx.day0825;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.Random;
-import java.util.Scanner;
 
 /**
  * @author 吕星琪
@@ -35,6 +33,9 @@ public class GuessNum {
 
         MyBtnClick listener=new MyBtnClick();
         button.addActionListener(listener);
+
+        //给输入框绑定键盘监听事件
+        jtf.addKeyListener(listener);
         //采用JPanel默认布局
         p.add(label);
         p.add(jtf);
@@ -65,16 +66,34 @@ public class GuessNum {
                 tips.setText("猜对了！");
                 tips.setForeground(Color.green);
             }
-            jtf.setText("");
-            jtf.requestFocusInWindow();
         }
-
+        jtf.setText("");
+        jtf.requestFocusInWindow();
     }
 
-    public class MyBtnClick implements ActionListener{
+    //KeyListener 键盘监听事件
+
+    public class MyBtnClick implements ActionListener, KeyListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             guess();
+        }
+
+        @Override
+        public void keyTyped(KeyEvent e) {
+
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+            if (e.getKeyCode()==KeyEvent.VK_ENTER){
+                guess();
+            }
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+
         }
     }
 }
