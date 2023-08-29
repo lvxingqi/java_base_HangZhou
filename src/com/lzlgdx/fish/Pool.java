@@ -41,6 +41,7 @@ public class Pool extends JPanel {
         bg=new ImageIcon("images/bg.jpg");
         //创建一条鱼
         fish=new Fish();
+        fish.start();
     }
 
     //三、行为 --方法
@@ -49,5 +50,11 @@ public class Pool extends JPanel {
     public void paint(Graphics g) {
         g.drawImage(bg.getImage(),0,0,getWidth(),getHeight(),this);
         g.drawImage(fish.getType(),fish.getX(),fish.getY(),null);
+    }
+
+    public void action(){
+        while (true){
+            repaint();
+        }
     }
 }

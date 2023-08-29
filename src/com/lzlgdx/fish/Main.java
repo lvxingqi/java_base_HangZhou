@@ -14,15 +14,13 @@ import java.io.IOException;
  * @Description 运行捕鱼达人游戏的主类
  */
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         //创建JFrame窗体界面
         new Main().init();
-
     }
 
     public void init() throws IOException {
         JFrame w=new JFrame("捕鱼达人");
-        JPanel p=new JPanel();
         w.setBounds(300,50,800,600);
 
         //设置图标
@@ -35,5 +33,7 @@ public class Main {
 
         w.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         w.setVisible(true);
+
+        pool.action();
     }
 }
