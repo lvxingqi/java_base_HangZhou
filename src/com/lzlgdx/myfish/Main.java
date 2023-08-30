@@ -1,13 +1,7 @@
-package com.lzlgdx.fish;
+package com.lzlgdx.myfish;
 
 import javax.imageio.ImageIO;
-import javax.imageio.ImageReader;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -34,11 +28,10 @@ public class Main {
 
         Pool pool=new Pool();
         w.add(pool);
+
         w.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         w.setVisible(true);
 
-        //System.out.println("横框"+w.getInsets().top);
         pool.action();
-
     }
 }
