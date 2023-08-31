@@ -14,7 +14,7 @@ import java.io.IOException;
  */
 public class SnowBackground extends JPanel {
     BufferedImage background;
-    SnowFlakes[] snowFlakes=new SnowFlakes[300];
+    SnowFlakes[] snowFlakes=new SnowFlakes[200];
     public SnowBackground() throws IOException {
         background= ImageIO.read(new File("images/sky.jpg"));
         for (int i=0;i<snowFlakes.length;i++){
@@ -25,11 +25,8 @@ public class SnowBackground extends JPanel {
     @Override
     public void paint(Graphics g) {
         g.drawImage(background,0,0,background.getWidth(),background.getHeight(),this);
-        int w,h;
         for (SnowFlakes sn : snowFlakes) {
-            w = sn.pieceOfSnow.getWidth();
-            h = sn.pieceOfSnow.getHeight();
-            g.drawImage(sn.pieceOfSnow, sn.x, sn.y, 5, 5, null);
+            g.drawImage(sn.pieceOfSnow, sn.x, sn.y, 10, 10, null);
         }
     }
 

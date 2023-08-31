@@ -21,19 +21,24 @@ public class SnowFlakes extends Thread{
         pieceOfSnow= ImageIO.read(new File("images/snow.png"));
         x=r.nextInt(950);
         y=0;
-        offset_y=r.nextInt(100);
+        offset_y=r.nextInt(500);
     }
 
     @Override
     public void run() {
         while (true){
             try {
-                Thread.sleep(200);
+                Thread.sleep(90);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
             offset_y=r.nextInt(100);
-            x--;
+            int m=r.nextInt(2);
+            if (m==0){
+                x++;
+            }else {
+                x--;
+            }
             y+=offset_y;
             if (x<0){
                 x=r.nextInt(950);
