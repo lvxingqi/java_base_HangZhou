@@ -21,7 +21,9 @@ public class Main {
 
         //调用showUI()
         clientContext.showUI();
-        loginWindow.setClientContext(clientContext);
+
+        //使用观察者模式解耦ClientContext和LoginWindow
+        loginWindow.addObserver(clientContext);
 
     }
 

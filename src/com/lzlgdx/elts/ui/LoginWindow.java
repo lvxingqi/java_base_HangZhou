@@ -3,34 +3,39 @@ package com.lzlgdx.elts.ui;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.Arrays;
 
 /**
  * @author 吕星琪
  * @version 1.10 2023/8/31 上午 10:47
  * @Description 登录界面的设计
  */
-public class LoginWindow extends JFrame {
+public class LoginWindow extends JFrame implements Observable {
 
-    public void setClientContext(ClientContext clientContext) {
-        this.clientContext = clientContext;
-    }
+    private static final long serialVersionUID = 3423770305937062385L;
 
-    private ClientContext clientContext;
+    //账号输入框
+    private JTextField idField;
+    //密码输入框
+    private JPasswordField pwdField;
 
     public LoginWindow() {
         init();
     }
 
-    /*public static void main(String[] args) {
-        new LoginWindow().init();
-    }*/
     private void init() {
         add(createContentPane());
         setSize(430,300);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(LoginWindow.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(LoginWindow.DO_NOTHING_ON_CLOSE);
+        this.addWindowListener((new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                notifyObserver("exit");
+            }
+        }));
     }
 
     //创建核心面板的方法
@@ -82,7 +87,7 @@ public class LoginWindow extends JFrame {
         JPanel pId=new JPanel(new BorderLayout());
 
         pId.add(BorderLayout.WEST,new JLabel("编号："));
-        JTextField idField=new JTextField();
+        idField=new JTextField();
         pId.add(BorderLayout.CENTER,idField);
         panel.add(pId);
 
@@ -90,7 +95,7 @@ public class LoginWindow extends JFrame {
         JPanel pPwd=new JPanel(new BorderLayout());
 
         pPwd.add(BorderLayout.WEST,new JLabel("密码："));
-        JPasswordField pwdField=new JPasswordField();
+        pwdField=new JPasswordField();
 
         pPwd.add(BorderLayout.CENTER,pwdField);
         panel.add(pPwd);
@@ -108,13 +113,28 @@ public class LoginWindow extends JFrame {
         //设置回车默认按钮
         getRootPane().setDefaultButton(login);
 
-        //绑定按钮监听事件
-        exit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                clientContext.exit(LoginWindow.this);
-            }
-        });
+        //绑定退出按钮监听事件
+        exit.addActionListener(e -> notifyObserver("exit"));
+        //登录按钮绑定事件监听
+        login.addActionListener(e -> notifyObserver("login"));
         return panel;
+    }
+
+
+    @Override
+    public void notifyObserver(String command) {
+        for (Observer observer : observers) {
+                observer.update(this,command);
+        }
+    }
+
+    //添加获取账号输入框内容的方法
+    public int getUserId(){
+        return Integer.parseInt(idField.getText());
+    }
+    //添加获取密码输入框内容的方法
+    public String getUserPassword(){
+        char[] chars=pwdField.getPassword();
+        return new String(chars);
     }
 }
