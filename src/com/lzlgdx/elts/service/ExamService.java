@@ -1,5 +1,6 @@
 package com.lzlgdx.elts.service;
 
+import com.lzlgdx.elts.entity.Question;
 import com.lzlgdx.elts.entity.User;
 
 /**
@@ -13,4 +14,6 @@ public interface ExamService {
      * @throws IdOrPwdException 登录失败抛出异常
      */
     User login(int id,String pwd) throws IdOrPwdException;
+
+    Question getQuestion();
 }

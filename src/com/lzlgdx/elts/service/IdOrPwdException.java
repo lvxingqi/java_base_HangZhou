@@ -6,6 +6,11 @@ package com.lzlgdx.elts.service;
  * @Description
  */
 public class IdOrPwdException extends Exception{
+
+    public IdOrPwdException(String message) {
+        super(message);
+    }
+
     @Override
     public String getMessage() {
         return super.getMessage();

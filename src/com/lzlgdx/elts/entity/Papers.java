@@ -6,4 +6,6 @@ package com.lzlgdx.elts.entity;
  * @Description 试卷实体类
  */
 public class Papers {
+    private final Question[] questions=new Question[200];
+
 }
